@@ -1,0 +1,76 @@
+
+body
+{
+    background-color: rgb(220,220,220);
+}
+canvas
+{
+    background-color: aliceblue;
+    border: 2px solid rgba(0,0,0,0.1);
+    border-radius: 100%;
+    box-shadow: 5px 5px 10px;
+    display: block;
+    margin: auto;
+    transition: border-radius 0.3s;
+}
+canvas:hover
+{
+    position:sticky;
+    border-radius: 10%;
+}
+.message-background
+{
+    
+    position: fixed;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20% 0;
+    transition: background 1s, padding 1s;
+    
+}
+#message-endgame
+{
+    color: white;
+    font-weight: bold;
+    font-size: xx-large;
+    text-align: center;
+
+}
+.message-background-green
+{
+    background-color: rgba(0, 119, 10, 0.438);
+}
+.message-background-red
+{
+    background-color: rgba(119, 0, 0, 0.438);
+}
+.text
+{
+    display: inline-block;
+    margin: 0px 3px;
+}
+.word
+{
+    margin: 40px 0px;
+    display: block;
+    text-align: center;
+}
+.word h2
+{
+    text-transform: uppercase;
+    margin: 0px;
+}
+.word-visible
+{
+    margin: 0px;
+}
+.game
+{
+
+    display: block;
+    margin: auto;
+    margin-top: 80px;
+}
