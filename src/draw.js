@@ -47,7 +47,6 @@ function drawPieRigth()
 }
 
 //nose donde se ahorca uno. xd
-
 function pillarPrincipal()
 {
     pincel.beginPath();

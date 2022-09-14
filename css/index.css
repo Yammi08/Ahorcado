@@ -1,0 +1,12 @@
+.btn-container
+{
+    position: absolute;
+    bottom: 100px;
+    width: 100%;
+    display: flex;
+    
+}
+a
+{
+    margin: auto;
+}

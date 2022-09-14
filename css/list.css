@@ -1,0 +1,8 @@
+#lista-palabras
+{
+    display:grid;
+}
+.item-list
+{
+    display: inline;
+}

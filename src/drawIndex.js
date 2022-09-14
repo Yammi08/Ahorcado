@@ -1,0 +1,4 @@
+draw.forEach(Element=>
+    {
+        Element();
+    })

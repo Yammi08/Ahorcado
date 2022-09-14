@@ -1,11 +1,5 @@
 var tries = 0;
-var word =
-[
-    'html',
-    'css',
-    'calamardo',
-    'catastrofe'
-];
+
 var state = "G";
 var letter = [];
 var rand = ()=>

@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>Ahorcado</title>
 </head>
 <body>
     <main>
-        <a href="./html/ahorcado.html"><button>Jugar</button></a>
-        <a href=""><button>añadir palabra</button></a>
+        <canvas class="center" width="360" height="400"></canvas>
+        <div class="btn-container">
+            <a href="./html/ahorcado.html"><div class="btn btn-center"><p>Jugar</p></div></a>
+            <a href="./html/listaPalabras.html"><div class="btn btn-center"><p>palabras</p></div></a>
+        </div>
+        <script src="src/draw.js"></script>
+        <script src="src/drawIndex.js"></script>
     </main>
 </body>
 </html>
