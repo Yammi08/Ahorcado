@@ -1,4 +1,5 @@
-draw.forEach(Element=>
+
+ahorcado.draw.forEach(Element=>
     {
         Element();
-    })
+    });

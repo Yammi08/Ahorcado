@@ -1,3 +1,4 @@
+
 function createCharHtml(id,char) 
 {
     let result = 

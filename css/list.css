@@ -2,7 +2,65 @@
 {
     display:grid;
 }
+.item-list h3
+{
+    flex: 2;
+    line-height: 1.5;
+}
 .item-list
 {
-    display: inline;
+    display: flex;
+    margin: 3px 0px;
+}
+main
+{
+    margin: 10px 10px;
+}
+.btn-special
+{
+    background-color: orange;
+    color: white;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+
+    border-radius: 100%;
+    text-align: center;
+    line-height: 1.5;
+    transition: background-color 0.5s;
+}
+.btn-special:hover
+{
+    cursor:pointer;
+    background-color:chocolate;
+    color:peachpuff;
+}
+
+
+.add-div
+{
+    display: flex;
+    width: 600px;
+    margin: auto;
+    
+}
+.text-input
+{
+    height: 40px;
+    width: 100%;
+    font-size: x-large;
+    margin: auto;
+    
+}
+.btn, .text-input
+{
+    margin-right: 10px;
+}
+.message
+{
+    margin: auto;
+    font-size: x-large;
+    font-weight: bold;
+    line-height: 1.5;
+    color: orange;
 }

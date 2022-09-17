@@ -1,7 +1,8 @@
 var tries = 0;
-
+var word = words.getElements();
 var state = "G";
 var letter = [];
+
 var rand = ()=>
 {
     return Math.floor(Math.random()*10*word.length)%word.length;
@@ -30,9 +31,9 @@ function selectChar(input)
         }
         if(notFound && result.length == 0)
         {
-            if(tries < draw.length)
+            if(tries < ahorcado.draw.length)
             {
-                draw[tries]();
+                ahorcado.draw[tries]();
                 tries += 1;
             }
             else

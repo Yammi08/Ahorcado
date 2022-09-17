@@ -1,92 +1,101 @@
-var canvas = document.querySelector('canvas');
-var pincel = canvas.getContext('2d');
-let positionX = 120;
-let positionY = 60;
-pincel.lineWidth = 5;
+
+
 //monigote
-function drawHead()
+class monigote
 {
-    pincel.beginPath();
-    pincel.arc(positionX+95,positionY+60,30,0,2*Math.PI);
-    pincel.stroke();
+    constructor(positionX = 120, positionY = 60)
+    {
+        this.canvas = document.querySelector('canvas');
+        this.pincel = this.canvas.getContext('2d');
+        this.pincel.lineWidth = 5;
+        this.positionX = positionX;
+        this.positionY = positionY;
+        this.draw = 
+        [
+            this.drawHead,
+            this.drawArmRigth,
+            this.drawArmLeft,
+            this.drawBody,
+            this.drawPieLeft,
+            this.drawPieRigth
+        ]
+        this.pillarPrincipal();
+        this.suportFloor(0,240,-1);
+        this.suportFloor(0,240,1);
+        this.lineToDeath();
+        this.lineTie();
+    }
+    drawHead = ()=>
+    {
+        console.log(this.pincel);
+        this.pincel.beginPath();
+        this.pincel.arc(this.positionX+95,this.positionY+60,30,0,2*Math.PI);
+        this.pincel.stroke();
+    }
+    drawArmRigth =()=>
+    {
+        this.pincel.beginPath();
+        this.pincel.moveTo(this.positionX+95,this.positionY+90)
+        this.pincel.lineTo(this.positionX+150,this.positionY+140);
+        this.pincel.stroke();
+    }
+    drawArmLeft =()=>
+    {
+        this.pincel.beginPath();
+        this.pincel.moveTo(this.positionX+95,this.positionY+90)
+        this.pincel.lineTo(this.positionX+40,this.positionY+140);
+        this.pincel.stroke();
+    }
+    drawBody =()=>
+    {
+        this.pincel.beginPath();
+        this.pincel.moveTo(this.positionX+95,this.positionY+90)
+        this.pincel.lineTo(this.positionX+95,this.positionY+180);
+        this.pincel.stroke();
+    }
+    drawPieLeft=()=>
+    {
+        this.pincel.beginPath();
+        this.pincel.moveTo(this.positionX+95,this.positionY+180)
+        this.pincel.lineTo(this.positionX+60,this.positionY+220);
+        this.pincel.stroke();
+    }
+    drawPieRigth=()=>
+    {
+        this.pincel.beginPath();
+        this.pincel.moveTo(this.positionX+95,this.positionY+180)
+        this.pincel.lineTo(this.positionX+130,this.positionY+220);
+        this.pincel.stroke();
+    }
+    
+    //nose donde se ahorca uno. xd
+    pillarPrincipal=()=>
+    {
+        this.pincel.beginPath();
+        this.pincel.moveTo(this.positionX,this.positionY+10)
+        this.pincel.lineTo(this.positionX,this.positionY+270);
+        this.pincel.stroke();
+    }
+    suportFloor=(posX,posY,dir)=>
+    {
+        this.pincel.beginPath();
+        this.pincel.moveTo(this.positionX+posX,this.positionY+posY)
+        this.pincel.lineTo(this.positionX+posX+(20*dir),this.positionY+posY+30);
+        this.pincel.stroke();
+    }
+    lineToDeath=()=>
+    {
+        this.pincel.beginPath();
+        this.pincel.moveTo(this.positionX-3,this.positionY+10)
+        this.pincel.lineTo(this.positionX+95,this.positionY+10);
+        this.pincel.stroke();
+    }
+    lineTie=()=>
+    {
+        this.pincel.beginPath();
+        this.pincel.moveTo(this.positionX+94,this.positionY+8)
+        this.pincel.lineTo(this.positionX+94,this.positionY+30);
+        this.pincel.stroke();
+    }
 }
-function drawArmRigth()
-{
-    pincel.beginPath();
-    pincel.moveTo(positionX+95,positionY+90)
-    pincel.lineTo(positionX+150,positionY+140);
-    pincel.stroke();
-}
-function drawArmLeft()
-{
-    pincel.beginPath();
-    pincel.moveTo(positionX+95,positionY+90)
-    pincel.lineTo(positionX+40,positionY+140);
-    pincel.stroke();
-}
-function drawBody()
-{
-    pincel.beginPath();
-    pincel.moveTo(positionX+95,positionY+90)
-    pincel.lineTo(positionX+95,positionY+180);
-    pincel.stroke();
-}
-function drawPieLeft()
-{
-    pincel.beginPath();
-    pincel.moveTo(positionX+95,positionY+180)
-    pincel.lineTo(positionX+60,positionY+220);
-    pincel.stroke();
-}
-function drawPieRigth()
-{
-    pincel.beginPath();
-    pincel.moveTo(positionX+95,positionY+180)
-    pincel.lineTo(positionX+130,positionY+220);
-    pincel.stroke();
-}
-
-//nose donde se ahorca uno. xd
-function pillarPrincipal()
-{
-    pincel.beginPath();
-    pincel.moveTo(positionX,positionY+10)
-    pincel.lineTo(positionX,positionY+270);
-    pincel.stroke();
-}
-function suportFloor(posX,posY,dir)
-{
-    pincel.beginPath();
-    pincel.moveTo(positionX+posX,positionY+posY)
-    pincel.lineTo(positionX+posX+(20*dir),positionY+posY+30);
-    pincel.stroke();
-}
-function lineToDeath()
-{
-    pincel.beginPath();
-    pincel.moveTo(positionX-3,positionY+10)
-    pincel.lineTo(positionX+95,positionY+10);
-    pincel.stroke();
-}
-function lineTie()
-{
-    pincel.beginPath();
-    pincel.moveTo(positionX+94,positionY+8)
-    pincel.lineTo(positionX+94,positionY+30);
-    pincel.stroke();
-}
-pillarPrincipal();
-suportFloor(0,240,-1);
-suportFloor(0,240,1);
-lineToDeath();
-lineTie();
-var draw = 
-[
-    drawHead,
-    drawArmRigth,
-    drawArmLeft,
-    drawBody,
-    drawPieLeft,
-    drawPieRigth
-]
-
+var ahorcado = new monigote();
